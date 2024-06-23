@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package searcher;
+
+option go_package = "getz.searcher.v1;searcherv1";
+
+service Searcher {
+
+  rpc SearchByISBN(SearchByISBNRequest) returns (SearchByISBNResponse);
+}
+
+message SearchByISBNRequest {
+  string isbn = 1;
+}
+
+message SearchByISBNResponse {
+  string title = 1;
+  string author = 2;
+  string publisher = 3;
+  string year = 4;
+}
